@@ -1,0 +1,9 @@
+body {
+    background: url('../images/burgerBG.jpg');
+    font-family: 'Coiny', cursive, serif;
+    font-size: 15px;
+}
+
+.card {
+    padding: 2px;
+}
