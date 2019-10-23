@@ -11,12 +11,12 @@ router.get('/', function(req, res) {
   };
   //grab data from burger table
   burger.selectAll(function(data) {
-    for (var i = 0; i < data.lenght; i++) {
+    for (var i = 0; i < data.length; i++) {
       info.brgr.push(data[i]);
     }
     //grab data from menu table
     burger.getMenu(function(data) {
-      for (var i = 0; i < data.lenght; i++) {
+      for (var i = 0; i < data.length; i++) {
         info.itm.push(data[i]);
       }
       //send it all to the index.handlebars
@@ -32,6 +32,12 @@ router.get('/menu', function(req, res) {
 });
 
 router.post('/create', function(req, res) {
+  burger.insertOne([req.body.burgerInput], function() {
+    res.redirect('/');
+  });
+});
+
+router.put('/update/:id', function(req, res) {
   burger.updateOne([req.body.devoured], [req.params.id], function() {
     res.redirect('/');
   });

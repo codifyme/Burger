@@ -16,13 +16,13 @@ var burger = {
     });
   },
   updateOne: function(colVal, conditionVal, cb) {
-    orm.updateOne('burgers', 'devoures', colVal, 'id', conditionVal, function(
+    orm.updateOne('burgers', 'devoured', colVal, 'id', conditionVal, function(
       res
     ) {
       cb(res);
     });
   },
-  deleteOne: function(conditioVal, cd) {
+  deleteOne: function(conditionVal, cd) {
     orm.deleteOne('burgers', 'id', conditionVal, function(res) {
       cd(res);
     });

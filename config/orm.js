@@ -21,7 +21,14 @@ var orm = {
 
   updateOne: function(table, col, colVal, condition, conditionVal, callback) {
     var queryString =
-      'UPDATE' + table + 'SET' + col + '=?' + 'WHERE' + condition + '=?';
+      'UPDATE ' +
+      table +
+      ' SET ' +
+      col +
+      ' =? ' +
+      ' WHERE ' +
+      condition +
+      ' =?';
 
     connection.query(queryString, [colVal, conditionVal], function(err, data) {
       if (err) throw err;
@@ -30,7 +37,7 @@ var orm = {
   },
 
   deleteOne: function(table, condition, conditionVal, callback) {
-    var queryString = 'DELETE FROM' + table + 'WHERE' + condition + '=?';
+    var queryString = 'DELETE FROM ' + table + ' WHERE ' + condition + ' =?';
     connection.query(queryString, [conditionVal], function(err, data) {
       if (err) throw err;
       callback(data);
