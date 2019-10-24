@@ -8,7 +8,7 @@
         <p>
             {{this.id}}.{{this.burger_name}}
 
-            <form action="delete/{{this.id}}?_method=DELETE" method="DELETE">
+            <form action="update/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="devoured" value="1">
                 <button type="submit" class="waves-effect waves-light btn green z-depth-4">DEVOUR IT!</button>
             </form>
@@ -28,7 +28,7 @@
             <p class="grey-text">
                 {{this.id}}.{{this.burger_name}}
 
-                <form action="delete/{{this.id}}?_method=DELETE" method="DELETE">
+                <form action="delete/{{this.id}}?_method=DELETE" method="POST">
                     <button type="submit" class="waves-effect waves-light btn green z-depth-4">Remove</button>
                 </form>
             </p>
