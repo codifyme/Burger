@@ -1,5 +1,11 @@
-var mysql = require('mysql');
+const mysql = require('mysql');
 var connection;
+
+const dotenv = require('dotenv');
+dotenv.config();
+const inquirer = require('inquirer');
+
+const MYSQL_PASS = process.env.MYSQL_PASS;
 
 if (process.env.JAWSDB_URL) {
   //Database is JawsDB on Heroku
@@ -10,17 +16,30 @@ if (process.env.JAWSDB_URL) {
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'marcelperu2019',
+    password: 'MYSQL_PASS',
     database: 'burgers_db'
   });
 }
-
+//Make the connection to MYSQL
 connection.connect(function(err) {
   if (err) {
-    console.error('error connecting:' + err.stack);
+    console.error('ERROR: MySQL connection error -- ' + err.stack + '\n\n');
     return;
+  } else {
+    console.log(
+      'Connected to MySQL database as id ' + connection.threadId + '\n\n'
+    );
   }
-  console.log('connected as id ' + connection.threadId);
 });
-
+//Export connection for ORM use
 module.exports = connection;
+
+// connection.connect(function(error) {
+//   if (!error) {
+//     console.error('error connecting:' + error.stack);
+//     return;
+//   }
+//   console.log('connected as id ' + connection.threadId);
+// });
+
+// module.exports = connection;
