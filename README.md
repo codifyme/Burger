@@ -28,11 +28,15 @@ Now, open the local App on port 3000 at your browser URL:
 >http://localhost:3000/.
 # Screen-shot
 ----------------
->Home Page - "Place your order"
-![terminal burger site](public/assets/images/hamburss.png)
 
->Dropdown Menu - "View the Menu"
+>Home Page - "View the Menu"
 ![terminal burger site](public/assets/images/viewMenu.png)
+
+>Drop Down - "Place your order"
+![terminal burger site](public/assets/images/placeorder.png)
+
+> Order list - "Eat the hamburger"
+![terminal burger site](public/assets/images/orderlist.png)
 
 # Build With
 1. Visual Studio Code - Text Edito
